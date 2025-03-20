@@ -48,7 +48,7 @@ jobs:
               ls -l $GITHUB_WORKSPACE/.github/actions/performance-test || echo "⚠️ actions/performance-test directory NOT FOUND"
 
       - name: Run JMeter Performance Test
-        uses: ./performance-test
+        uses: ./.github/actions/performance-test
         with:
           test-plan: "performance-test.jmx"
 
