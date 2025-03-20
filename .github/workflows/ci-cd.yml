@@ -40,20 +40,7 @@ jobs:
       - name: Checkout Repository  # Ensures the repo files are available
         uses: actions/checkout@v3  
       
-      - name: Print Directory Structure  # Debugging step
-        run: |
-              echo "🏗️ Listing all files in the runner workspace..."
-              ls -la $GITHUB_WORKSPACE
-              echo "🏗️ Checking inside actions/performance-test..."
-              ls -l $GITHUB_WORKSPACE/.github/actions/performance-test || echo "⚠️ actions/performance-test directory NOT FOUND"
-
       - name: Run JMeter Performance Test
         uses: ./.github/actions/performance-test
         with:
           test-plan: "performance-test.jmx"
-
-      - name: Upload Performance Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: performance-test-results
-          path: performance-test/results.jtl
