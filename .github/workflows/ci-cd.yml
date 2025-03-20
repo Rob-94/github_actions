@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run JMeter Performance Test
-        uses: ./.github/actions/performance-test
+        uses: ./actions/performance-test
         with:
           test-plan: "performance-test.jmx"
 
