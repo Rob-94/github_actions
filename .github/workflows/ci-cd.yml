@@ -37,8 +37,8 @@ jobs:
     needs: build
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout Repository  # Ensures the repo files are available
+        uses: actions/checkout@v3  
 
       - name: Run JMeter Performance Test
         uses: ./actions/performance-test

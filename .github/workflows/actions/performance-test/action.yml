@@ -9,4 +9,4 @@ inputs:
 
 runs:
   using: "docker"
-  image: "app.dockerfile"
+  image: "./actions/performance-test/app.dockerfile"
