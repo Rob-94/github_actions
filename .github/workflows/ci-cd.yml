@@ -31,3 +31,22 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
 
+  performance-test:
+    name: Run Performance Tests
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run JMeter Performance Test
+        uses: ./.github/actions/performance-test
+        with:
+          test-plan: "performance-test.jmx"
+
+      - name: Upload Performance Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: performance-test-results
+          path: performance-test/results.jtl

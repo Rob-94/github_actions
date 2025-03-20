@@ -1,0 +1,12 @@
+name: "JMeter Performance Test"
+description: "Run JMeter performance tests in a GitHub Action"
+author: "Robert Yeghiazaryan"
+inputs:
+  test-plan:
+    description: "Path to the JMeter test plan"
+    required: true
+    default: "performance-test.jmx"
+
+runs:
+  using: "docker"
+  image: "app.dockerfile"

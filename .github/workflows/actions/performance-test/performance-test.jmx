@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+    <hashTree>
+        <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Performance Test" enabled="true">
+            <hashTree>
+                <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Load Test Group" enabled="true">
+                    <stringProp name="ThreadGroup.num_threads">10</stringProp>
+                    <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+                    <stringProp name="ThreadGroup.duration">60</stringProp>
+                    <boolProp name="ThreadGroup.scheduler">true</boolProp>
+                    <hashTree>
+                        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Homepage Request" enabled="true">
+                            <stringProp name="HTTPSampler.domain">my-app.com</stringProp>
+                            <stringProp name="HTTPSampler.port"></stringProp>
+                            <stringProp name="HTTPSampler.protocol">https</stringProp>
+                            <stringProp name="HTTPSampler.path">/</stringProp>
+                            <stringProp name="HTTPSampler.method">GET</stringProp>
+                        </HTTPSamplerProxy>
+                        <hashTree/>
+                    </hashTree>
+                </ThreadGroup>
+            </hashTree>
+        </TestPlan>
+    </hashTree>
+</jmeterTestPlan>
