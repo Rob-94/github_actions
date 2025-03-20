@@ -18,5 +18,5 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Docker Image
-        run: docker build -t docker.io/my-organization/my-app:${{ github.sha }} -f sapp.dockerfile .
+        run: docker build -t docker.io/my-organization/my-app:${{ github.sha }} -f app.dockerfile .
 
