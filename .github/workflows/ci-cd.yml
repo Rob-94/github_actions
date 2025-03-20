@@ -46,7 +46,7 @@ jobs:
           test-plan: "performance-test.jmx"
 
       - name: Upload Performance Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: performance-test-results
           path: performance-test/results.jtl
