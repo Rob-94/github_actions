@@ -43,11 +43,9 @@ jobs:
       - name: Print Directory Structure  # Debugging step
         run: |
               echo "🏗️ Listing all files in the runner workspace..."
-              ls -la -R $GITHUB_WORKSPACE
-              echo "pwd"
-              pwd
+              ls -la $GITHUB_WORKSPACE
               echo "🏗️ Checking inside actions/performance-test..."
-              ls -R $GITHUB_WORKSPACE/actions/performance-test || echo "⚠️ actions/performance-test directory NOT FOUND"
+              ls -l $GITHUB_WORKSPACE/.github/actions/performance-test || echo "⚠️ actions/performance-test directory NOT FOUND"
 
       # - name: Run JMeter Performance Test
       #   uses: ./actions/performance-test
