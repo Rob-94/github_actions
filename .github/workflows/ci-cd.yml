@@ -1,0 +1,22 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: docker build -t docker.io/my-organization/my-app:${{ github.sha }} -f ci_cd_task/app.dockerfile .
+
